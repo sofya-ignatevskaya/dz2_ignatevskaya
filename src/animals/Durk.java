@@ -40,8 +40,7 @@ public class Durk extends Herbivore implements Run, Swim, Fly, Voice {
     public void eat(Food food) {
         if (food instanceof Meat) {
             System.out.println("Растительноядные не едят мясо");
-        }
-        else if (food instanceof Wheat) {
+        } else if (food instanceof Wheat) {
             super.eat(food);
         } else {
             System.out.println("Утка это не ест");

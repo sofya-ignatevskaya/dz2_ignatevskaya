@@ -1,4 +1,5 @@
 import animals.*;
+import animals.interfaces.Swim;
 import food.*;
 
 public class Zoo {
@@ -56,8 +57,26 @@ public class Zoo {
         worker.getVoice(giraffe);
         worker.getVoice(durk);
         worker.getVoice(fox);
-
+        System.out.println();
         /*ошибка компиляции, тк класс Fish не реализует интерфейс Voice, у него нет метода voice()*/
         //worker.getVoice(fish);
+
+        durk.fly();
+        durk.swim();
+        durk.run();
+        durk.eat(wheat);
+        System.out.println();
+
+        Swim[] pond = new Swim[6];
+        pond[0] = fish;
+        pond[1] = durk;
+        pond[2] = new Fish("Gold fish", 0);
+        pond[3] = new Durk();
+        pond[4] = new Fish();
+        pond[5] = new Durk();
+
+        for (int i = 0; i < pond.length; i++) {
+            pond[i].swim();
+        }
     }
 }
