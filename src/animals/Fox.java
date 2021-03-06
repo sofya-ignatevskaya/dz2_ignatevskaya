@@ -4,6 +4,7 @@ import animals.interfaces.Run;
 import animals.interfaces.Swim;
 import animals.interfaces.Voice;
 import food.Food;
+import food.Grass;
 import food.MeatForFox;
 import food.Wheat;
 
@@ -12,6 +13,8 @@ public class Fox extends Carnivorous implements Run, Voice {
         super(name, satiety);
     }
 
+    public Fox() {
+    }
 
     @Override
     public void run() {
@@ -25,10 +28,13 @@ public class Fox extends Carnivorous implements Run, Voice {
 
     @Override
     public void eat(Food food) {
-        if (food instanceof MeatForFox) {
+        if (food instanceof Grass) {
+            System.out.println("Хищники не едят растения");
+        } else if (food instanceof MeatForFox) {
             super.eat(food);
-        }else{
+        } else {
             System.out.println("Лиса это не ест");
         }
+
     }
 }

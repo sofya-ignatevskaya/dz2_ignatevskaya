@@ -4,11 +4,15 @@ import animals.interfaces.Run;
 import animals.interfaces.Voice;
 import food.Carrot;
 import food.Food;
+import food.Meat;
 import food.Wheat;
 
 public class Rabbit extends Herbivore implements Run, Voice {
     public Rabbit(String name, int satiety) {
         super(name, satiety);
+    }
+
+    public Rabbit() {
     }
 
     @Override
@@ -23,9 +27,11 @@ public class Rabbit extends Herbivore implements Run, Voice {
 
     @Override
     public void eat(Food food) {
-        if (food instanceof Carrot) {
+        if (food instanceof Meat) {
+            System.out.println("Растительноядные не едят мясо");
+        } else if (food instanceof Carrot) {
             super.eat(food);
-        }else{
+        } else {
             System.out.println("Кролик это не ест");
         }
     }

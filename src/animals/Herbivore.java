@@ -9,13 +9,12 @@ public abstract class Herbivore extends Animal {
         super(name, satiety);
     }
 
+    public Herbivore() {
+    }
+
     @Override
     public void eat(Food food) {
-        if (food instanceof Meat) {
-            System.out.println("Растительноядные не едят мясо");
-        } else {
-            System.out.println(this.getName() + " ест " + food.getClass().getName() +
-                    ". Satiety is " + this.getSatiety());
-        }
+        System.out.println(this.getName() + " ест " + food.getClass().getName() +
+                ". Satiety is " + this.getSatiety());
     }
 }

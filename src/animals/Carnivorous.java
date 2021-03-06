@@ -9,13 +9,12 @@ public abstract class Carnivorous extends Animal {
         super(name, satiety);
     }
 
+    public Carnivorous() {
+    }
+
     @Override
     public void eat(Food food) {
-        if (food instanceof Grass) {
-            System.out.println("Хищники не едят растения");
-        } else {
-            System.out.println(this.getName() + " ест " + food.getClass().getName() +
-                    ". Satiety is " + this.getSatiety());
-        }
+        System.out.println(this.getName() + " ест " + food.getClass().getName() +
+                ". Satiety is " + this.getSatiety());
     }
 }
