@@ -5,8 +5,8 @@ import food.Grass;
 
 public abstract class Carnivorous extends Animal {
 
-    public Carnivorous(String name) {
-        super(name);
+    public Carnivorous(String name, int satiety) {
+        super(name, satiety);
     }
 
     @Override

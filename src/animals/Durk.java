@@ -4,10 +4,12 @@ import animals.interfaces.Fly;
 import animals.interfaces.Run;
 import animals.interfaces.Swim;
 import animals.interfaces.Voice;
+import food.Food;
+import food.Wheat;
 
 public class Durk extends Herbivore implements Run, Swim, Fly, Voice {
-    public Durk(String name) {
-        super(name);
+    public Durk(String name, int satiety) {
+        super(name, satiety);
     }
 
     @Override
@@ -28,5 +30,14 @@ public class Durk extends Herbivore implements Run, Swim, Fly, Voice {
     @Override
     public String voice() {
         return "Кря-Кря";
+    }
+
+    @Override
+    void eat(Food food) {
+        if (food instanceof Wheat) {
+            super.eat(food);
+        }else{
+            System.out.println("Утка это не ест");
+        }
     }
 }
