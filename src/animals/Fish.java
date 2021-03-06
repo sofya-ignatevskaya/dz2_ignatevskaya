@@ -16,7 +16,7 @@ public class Fish extends Carnivorous implements Swim {
     }
 
     @Override
-    void eat(Food food) {
+    public void eat(Food food) {
         if (food instanceof MeatForFish) {
             super.eat(food);
         }else{

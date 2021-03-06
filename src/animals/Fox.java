@@ -7,7 +7,7 @@ import food.Food;
 import food.MeatForFox;
 import food.Wheat;
 
-public class Fox extends Carnivorous implements Run, Swim, Voice {
+public class Fox extends Carnivorous implements Run, Voice {
     public Fox(String name, int satiety) {
         super(name, satiety);
     }
@@ -19,17 +19,12 @@ public class Fox extends Carnivorous implements Run, Swim, Voice {
     }
 
     @Override
-    public void swim() {
-        System.out.println(this.getName() + " is swimming");
-    }
-
-    @Override
     public String voice() {
         return "Вр-Вр-Вр";
     }
 
     @Override
-    void eat(Food food) {
+    public void eat(Food food) {
         if (food instanceof MeatForFox) {
             super.eat(food);
         }else{

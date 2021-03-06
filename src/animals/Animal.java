@@ -6,10 +6,6 @@ public abstract class Animal {
     private String name;
     private int satiety;
 
-    public Animal(){
-        this.name = "Animal";
-        this.satiety = 0;
-    }
     public Animal(String name, int satiety) {
         this.name = name;
         this.satiety = satiety;

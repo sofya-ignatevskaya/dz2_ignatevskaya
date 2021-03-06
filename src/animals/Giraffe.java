@@ -22,7 +22,7 @@ public class Giraffe extends Herbivore implements Run, Voice {
     }
 
     @Override
-    void eat(Food food) {
+    public void eat(Food food) {
         if (food instanceof Leaves) {
             super.eat(food);
         }else{
