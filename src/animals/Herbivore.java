@@ -14,6 +14,7 @@ public abstract class Herbivore extends Animal {
 
     @Override
     public void eat(Food food) {
+        food.addSatiety(this);
         System.out.println(this.getName() + " ест " + food.getClass().getName() +
                 ". Satiety is " + this.getSatiety());
     }

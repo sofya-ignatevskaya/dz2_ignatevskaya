@@ -24,10 +24,40 @@ public class Zoo {
         worker.feed(durk, meatForFish);
         worker.feed(durk, wheat);
         worker.feed(durk, carrot);
+        System.out.println();
 
+        worker.feed(giraffe, meatForFox);
+        worker.feed(giraffe, leaves);
+        worker.feed(giraffe, carrot);
+        System.out.println();
+
+        worker.feed(rabbit, meatForTiger);
+        worker.feed(rabbit, carrot);
+        worker.feed(rabbit, wheat);
+        System.out.println();
+
+        worker.feed(tiger, leaves);
+        worker.feed(tiger, meatForTiger);
+        worker.feed(tiger, meatForFox);
+        System.out.println();
+
+        worker.feed(fox, wheat);
+        worker.feed(fox, meatForFox);
+        worker.feed(fox, meatForFish);
+        System.out.println();
+
+        worker.feed(fish, carrot);
+        worker.feed(fish, meatForFish);
+        worker.feed(fish, meatForTiger);
+        System.out.println();
 
         worker.getVoice(tiger);
+        worker.getVoice(rabbit);
+        worker.getVoice(giraffe);
+        worker.getVoice(durk);
+        worker.getVoice(fox);
 
-
+        /*ошибка компиляции, тк класс Fish не реализует интерфейс Voice, у него нет метода voice()*/
+        //worker.getVoice(fish);
     }
 }
