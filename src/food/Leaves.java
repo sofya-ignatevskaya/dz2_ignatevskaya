@@ -1,7 +1,10 @@
 package food;
 
+import animals.Animal;
+
 public class Leaves extends Grass{
-    public Leaves(String name) {
-        super(name);
+    @Override
+    public void addSatiety(Animal animal) {
+        animal.setSatiety(animal.getSatiety() + 10);
     }
 }

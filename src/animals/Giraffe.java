@@ -2,6 +2,9 @@ package animals;
 
 import animals.interfaces.Run;
 import animals.interfaces.Voice;
+import food.Food;
+import food.Leaves;
+import food.Wheat;
 
 public class Giraffe extends Herbivore implements Run, Voice {
     public Giraffe(String name, int satiety) {
@@ -16,5 +19,14 @@ public class Giraffe extends Herbivore implements Run, Voice {
     @Override
     public String voice() {
         return "Ааааааа";
+    }
+
+    @Override
+    void eat(Food food) {
+        if (food instanceof Leaves) {
+            super.eat(food);
+        }else{
+            System.out.println("Жираф это не ест");
+        }
     }
 }

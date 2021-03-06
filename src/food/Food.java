@@ -1,13 +1,7 @@
 package food;
 
+import animals.Animal;
+
 public abstract class Food {
-    String name;
-
-    public Food(String name) {
-        this.name = name;
-    }
-
-    public String getName() {
-        return name;
-    }
+    abstract public void addSatiety(Animal animal);
 }

@@ -8,7 +8,7 @@ public abstract class Animal {
 
     public Animal(){
         this.name = "Animal";
-        this.satiety = 100;
+        this.satiety = 0;
     }
     public Animal(String name, int satiety) {
         this.name = name;
@@ -23,5 +23,8 @@ public abstract class Animal {
         return satiety;
     }
 
-    abstract void eat(Food food);
+    public void setSatiety(int satiety) {
+        this.satiety = satiety;
+    }
+    abstract public void eat(Food food);
 }

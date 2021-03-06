@@ -33,7 +33,7 @@ public class Durk extends Herbivore implements Run, Swim, Fly, Voice {
     }
 
     @Override
-    void eat(Food food) {
+    public void eat(Food food) {
         if (food instanceof Wheat) {
             super.eat(food);
         }else{
