@@ -32,11 +32,11 @@ public class Fish extends Carnivorous implements Swim {
     @Override
     public void eat(Food food) {
         if (food instanceof Grass) {
-            System.out.println("Хищники не едят растения");
+            System.out.println("Хищники не едят растения: " + food.getClass().getSimpleName());
         } else if (food instanceof MeatForFish) {
             super.eat(food);
         } else {
-            System.out.println("Хищная рыба это не ест");
+            System.out.println("Хищная рыба не ест " + food.getClass().getSimpleName());
         }
     }
 }

@@ -7,7 +7,7 @@ public abstract class Animal {
     private int satiety;
 
     public Animal() {
-        setNameAndSatiety(this.getClass().getName(), 0);
+        setNameAndSatiety(this.getClass().getSimpleName(), 0);
     }
 
     public Animal(String name, int satiety) {

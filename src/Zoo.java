@@ -1,5 +1,8 @@
 import animals.*;
+import animals.interfaces.Fly;
+import animals.interfaces.Run;
 import animals.interfaces.Swim;
+import animals.interfaces.Voice;
 import food.*;
 
 public class Zoo {
@@ -20,51 +23,54 @@ public class Zoo {
         MeatForFox meatForFox = new MeatForFox();
         MeatForFish meatForFish = new MeatForFish();
 
-
         Worker worker = new Worker();
-        worker.feed(durk, meatForFish);
-        worker.feed(durk, wheat);
-        worker.feed(durk, carrot);
+
+        System.out.println("Кормим животных различной едой\n");
+
+        Animal[] animals = new Animal[]{durk, giraffe, rabbit, tiger, fox, fish};
+        Food[] foods = new Food[]{wheat, leaves, carrot, meatForTiger, meatForFish, meatForFox};
+        for (int i = 0; i < animals.length; i++) {
+            for (int j = 0; j < foods.length; j++) {
+                worker.feed(animals[i], foods[j]);
+            }
+            System.out.println();
+        }
+
+        //ошибка компиляции, тк класс Fish не реализует интерфейс Voice
+        //Voice[] voices = new Voice[]{fish};
+
+        System.out.println("Просим животных подать голос\n");
+
+        Voice[] voices = new Voice[]{durk, giraffe, rabbit, tiger, fox};
+        for (int i = 0; i < voices.length; i++) {
+            worker.getVoice(voices[i]);
+        }
+
+        System.out.println("\nПроверяем работу методов\n");
+
+        for (int i = 0; i < voices.length; i++) {
+            voices[i].shout();
+            voices[i].silent();
+        }
         System.out.println();
 
-        worker.feed(giraffe, meatForFox);
-        worker.feed(giraffe, leaves);
-        worker.feed(giraffe, carrot);
+        Run[] runs = new Run[]{tiger, rabbit, fox, giraffe};
+        for (int i = 0; i < runs.length; i++) {
+            runs[i].crawl();
+            runs[i].run();
+            runs[i].go();
+            runs[i].jump();
+        }
         System.out.println();
 
-        worker.feed(rabbit, meatForTiger);
-        worker.feed(rabbit, carrot);
-        worker.feed(rabbit, wheat);
-        System.out.println();
-
-        worker.feed(tiger, leaves);
-        worker.feed(tiger, meatForTiger);
-        worker.feed(tiger, meatForFox);
-        System.out.println();
-
-        worker.feed(fox, wheat);
-        worker.feed(fox, meatForFox);
-        worker.feed(fox, meatForFish);
-        System.out.println();
-
-        worker.feed(fish, carrot);
-        worker.feed(fish, meatForFish);
-        worker.feed(fish, meatForTiger);
-        System.out.println();
-
-        worker.getVoice(tiger);
-        worker.getVoice(rabbit);
-        worker.getVoice(giraffe);
-        worker.getVoice(durk);
-        worker.getVoice(fox);
-        System.out.println();
-        /*ошибка компиляции, тк класс Fish не реализует интерфейс Voice, у него нет метода voice()*/
-        //worker.getVoice(fish);
-
-        durk.fly();
-        durk.swim();
-        durk.run();
-        durk.eat(wheat);
+        Fly[] flies = new Fly[2];
+        flies[0] = durk;
+        flies[1] = new Durk();
+        for (int i = 0; i < flies.length; i++) {
+            flies[i].takeOff();
+            flies[i].fly();
+            flies[i].landing();
+        }
         System.out.println();
 
         Swim[] pond = new Swim[6];
@@ -77,6 +83,8 @@ public class Zoo {
 
         for (int i = 0; i < pond.length; i++) {
             pond[i].swim();
+            pond[i].dive();
+            pond[i].emerge();
         }
     }
 }

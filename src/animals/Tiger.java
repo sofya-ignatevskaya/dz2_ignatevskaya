@@ -55,11 +55,11 @@ public class Tiger extends Carnivorous implements Run, Voice {
     @Override
     public void eat(Food food) {
         if (food instanceof Grass) {
-            System.out.println("Хищники не едят растения");
+            System.out.println("Хищники не едят растения: " + food.getClass().getSimpleName());
         } else if (food instanceof MeatForTiger) {
             super.eat(food);
         } else {
-            System.out.println("Тигр это не ест");
+            System.out.println("Тигр не ест " + food.getClass().getSimpleName());
         }
     }
 }
