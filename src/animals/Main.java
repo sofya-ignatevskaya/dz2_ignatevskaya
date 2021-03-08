@@ -1,10 +1,5 @@
-import animals.Animal;
-import animals.Fish;
-import animals.Rabbit;
-import animals.Tiger;
-import food.Food;
+package animals;
 
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -23,7 +18,7 @@ public class Main {
         System.out.println(aviaryMap.toString());
 
         Tiger tiger = new Tiger("Leo","большой");
-        String name = SizeAviary.BIG.getvalue();
+        String name = SizeAviary.BIG.getValue();
 
 
     }

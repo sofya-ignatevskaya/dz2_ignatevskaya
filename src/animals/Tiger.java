@@ -17,8 +17,8 @@ public class Tiger extends Carnivorous implements Run, Voice {
     public Tiger() {
     }
 
-    public Tiger(String name, String aviarysize) {
-        super(name, aviarysize);
+    public Tiger(String name, SizeAviary sizeAviary) {
+        super(name, sizeAviary);
     }
 
     @Override

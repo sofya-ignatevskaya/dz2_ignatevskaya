@@ -16,8 +16,8 @@ public class Fox extends Carnivorous implements Run, Voice {
     public Fox() {
     }
 
-    public Fox(String name, String aviarysize) {
-        super(name, aviarysize);
+    public Fox(String name, SizeAviary sizeAviary) {
+        super(name, sizeAviary);
     }
 
     @Override

@@ -1,3 +1,5 @@
+package animals;
+
 public enum SizeAviary {
     HUGE("огромный"), BIG("большой"), MEDIUM("средний"), LITTLE("маленький");
 
@@ -7,7 +9,7 @@ public enum SizeAviary {
         this.value = value;
     }
 
-    public String getvalue() {
+    public String getValue() {
         return this.value;
     }
 }

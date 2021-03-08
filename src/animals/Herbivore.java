@@ -9,8 +9,8 @@ public abstract class Herbivore extends Animal {
         super(name, satiety);
     }
 
-    public Herbivore(String name, String aviarysize) {
-        super(name, aviarysize);
+    public Herbivore(String name, SizeAviary sizeAviary) {
+        super(name, sizeAviary);
     }
 
     public Herbivore() {

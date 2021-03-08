@@ -17,8 +17,8 @@ public class Durk extends Herbivore implements Swim, Fly, Voice {
     public Durk() {
     }
 
-    public Durk(String name, String aviarysize) {
-        super(name, aviarysize);
+    public Durk(String name, SizeAviary sizeAviary) {
+        super(name, sizeAviary);
     }
 
     @Override

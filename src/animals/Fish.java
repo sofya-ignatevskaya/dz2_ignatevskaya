@@ -14,8 +14,8 @@ public class Fish extends Carnivorous implements Swim {
     public Fish() {
     }
 
-    public Fish(String name, String aviarysize) {
-        super(name, aviarysize);
+    public Fish(String name, SizeAviary sizeAviary) {
+        super(name, sizeAviary);
     }
 
     @Override
