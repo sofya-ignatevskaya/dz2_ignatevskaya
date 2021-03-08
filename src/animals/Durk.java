@@ -9,6 +9,7 @@ import food.Meat;
 import food.Wheat;
 
 public class Durk extends Herbivore implements Swim, Fly, Voice {
+
     public Durk(String name, int satiety) {
         super(name, satiety);
     }
@@ -16,7 +17,9 @@ public class Durk extends Herbivore implements Swim, Fly, Voice {
     public Durk() {
     }
 
-
+    public Durk(String name, String aviarysize) {
+        super(name, aviarysize);
+    }
 
     @Override
     public void fly() {

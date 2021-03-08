@@ -17,6 +17,10 @@ public class Tiger extends Carnivorous implements Run, Voice {
     public Tiger() {
     }
 
+    public Tiger(String name, String aviarysize) {
+        super(name, aviarysize);
+    }
+
     @Override
     public void run() {
         System.out.println(this.getName() + " is running");

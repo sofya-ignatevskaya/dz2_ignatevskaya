@@ -15,6 +15,10 @@ public class Rabbit extends Herbivore implements Run, Voice {
     public Rabbit() {
     }
 
+    public Rabbit(String name, String aviarysize) {
+        super(name, aviarysize);
+    }
+
     @Override
     public void run() {
         System.out.println(this.getName() + " is running");

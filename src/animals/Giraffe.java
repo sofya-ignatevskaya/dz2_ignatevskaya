@@ -15,6 +15,10 @@ public class Giraffe extends Herbivore implements Run, Voice {
     public Giraffe() {
     }
 
+    public Giraffe(String name, String aviarysize) {
+        super(name, aviarysize);
+    }
+
     @Override
     public void run() {
         System.out.println(this.getName() + " is running");

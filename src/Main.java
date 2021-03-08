@@ -22,6 +22,9 @@ public class Main {
         System.out.println( aviaryMap.get("Fish"));
         System.out.println(aviaryMap.toString());
 
+        Tiger tiger = new Tiger("Leo","большой");
+        String name = SizeAviary.BIG.getvalue();
+
 
     }
 }

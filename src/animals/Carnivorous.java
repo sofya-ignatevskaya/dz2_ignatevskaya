@@ -9,6 +9,9 @@ public abstract class Carnivorous extends Animal {
         super(name, satiety);
     }
 
+    public Carnivorous(String name, String aviarysize) {
+        super(name, aviarysize);
+    }
 
     public Carnivorous() {
     }

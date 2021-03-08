@@ -14,6 +14,10 @@ public class Fish extends Carnivorous implements Swim {
     public Fish() {
     }
 
+    public Fish(String name, String aviarysize) {
+        super(name, aviarysize);
+    }
+
     @Override
     public void swim() {
         System.out.println(this.getName() + " is swimming");
