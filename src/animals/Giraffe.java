@@ -21,8 +21,33 @@ public class Giraffe extends Herbivore implements Run, Voice {
     }
 
     @Override
+    public void go() {
+        System.out.println(this.getName() + " is going");
+    }
+
+    @Override
+    public void crawl() {
+        System.out.println(this.getName() + " is crawling");
+    }
+
+    @Override
+    public void jump() {
+        System.out.println(this.getName() + " is jumping");
+    }
+
+    @Override
     public String voice() {
         return "Ааааааа";
+    }
+
+    @Override
+    public void shout() {
+        System.out.println(this.getName() + " is shouting");
+    }
+
+    @Override
+    public void silent() {
+        System.out.println(this.getName() + " is silent");
     }
 
     @Override

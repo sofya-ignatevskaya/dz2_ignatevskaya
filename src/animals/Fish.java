@@ -20,6 +20,16 @@ public class Fish extends Carnivorous implements Swim {
     }
 
     @Override
+    public void dive() {
+        System.out.println(this.getName() + " is diving");
+    }
+
+    @Override
+    public void emerge() {
+        System.out.println(this.getName() + " is emerging from the water");
+    }
+
+    @Override
     public void eat(Food food) {
         if (food instanceof Grass) {
             System.out.println("Хищники не едят растения");
