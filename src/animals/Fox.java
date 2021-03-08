@@ -1,12 +1,12 @@
 package animals;
 
+import MyException.WrongFoodException;
 import animals.interfaces.Run;
-import animals.interfaces.Swim;
 import animals.interfaces.Voice;
 import food.Food;
 import food.Grass;
 import food.MeatForFox;
-import food.Wheat;
+
 
 public class Fox extends Carnivorous implements Run, Voice {
     public Fox(String name, int satiety) {
@@ -56,14 +56,13 @@ public class Fox extends Carnivorous implements Run, Voice {
     }
 
     @Override
-    public void eat(Food food) {
+    public void eat(Food food) throws WrongFoodException {
         if (food instanceof Grass) {
-            System.out.println("Хищники не едят растения: " + food.getClass().getSimpleName());
+            throw new WrongFoodException("Хищники не едят растения: " + food.getClass().getSimpleName());
         } else if (food instanceof MeatForFox) {
             super.eat(food);
         } else {
-            System.out.println("Лиса не ест " + food.getClass().getSimpleName());
+            throw new WrongFoodException("Лиса не ест " + food.getClass().getSimpleName());
         }
-
     }
 }

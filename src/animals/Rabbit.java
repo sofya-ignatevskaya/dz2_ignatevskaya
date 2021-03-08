@@ -1,5 +1,6 @@
 package animals;
 
+import MyException.WrongFoodException;
 import animals.interfaces.Run;
 import animals.interfaces.Voice;
 import food.Carrot;
@@ -55,13 +56,13 @@ public class Rabbit extends Herbivore implements Run, Voice {
     }
 
     @Override
-    public void eat(Food food) {
+    public void eat(Food food) throws WrongFoodException {
         if (food instanceof Meat) {
-            System.out.println("Растительноядные не едят мясо: " + food.getClass().getSimpleName());
+            throw new WrongFoodException("Растительноядные не едят мясо: " + food.getClass().getSimpleName());
         } else if (food instanceof Carrot) {
             super.eat(food);
         } else {
-            System.out.println("Кролик не ест " + food.getClass().getSimpleName());
+            throw new WrongFoodException("Кролик не ест " + food.getClass().getSimpleName());
         }
     }
 }

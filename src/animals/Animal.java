@@ -1,5 +1,6 @@
 package animals;
 
+import MyException.WrongFoodException;
 import food.Food;
 
 import java.util.Objects;
@@ -37,11 +38,15 @@ public abstract class Animal {
         return satiety;
     }
 
+    public SizeAviary getSizeAviary() {
+        return sizeAviary;
+    }
+
     public void setSatiety(int satiety) {
         this.satiety = satiety;
     }
 
-    abstract public void eat(Food food);
+    abstract public void eat(Food food) throws WrongFoodException;
 
     @Override
     public boolean equals(Object o) {

@@ -1,5 +1,6 @@
 package animals;
 
+import MyException.WrongFoodException;
 import animals.interfaces.Swim;
 import food.Food;
 import food.Grass;
@@ -34,13 +35,13 @@ public class Fish extends Carnivorous implements Swim {
     }
 
     @Override
-    public void eat(Food food) {
+    public void eat(Food food) throws WrongFoodException {
         if (food instanceof Grass) {
-            System.out.println("Хищники не едят растения: " + food.getClass().getSimpleName());
+            throw new WrongFoodException("Хищники не едят растения: " + food.getClass().getSimpleName());
         } else if (food instanceof MeatForFish) {
             super.eat(food);
         } else {
-            System.out.println("Хищная рыба не ест " + food.getClass().getSimpleName());
+            throw new WrongFoodException("Хищная рыба не ест " + food.getClass().getSimpleName());
         }
     }
 }

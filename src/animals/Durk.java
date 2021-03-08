@@ -1,5 +1,6 @@
 package animals;
 
+import MyException.WrongFoodException;
 import animals.interfaces.Fly;
 import animals.interfaces.Run;
 import animals.interfaces.Swim;
@@ -67,13 +68,13 @@ public class Durk extends Herbivore implements Swim, Fly, Voice {
     }
 
     @Override
-    public void eat(Food food) {
+    public void eat(Food food) throws WrongFoodException {
         if (food instanceof Meat) {
-            System.out.println("Растительноядные не едят мясо: " + food.getClass().getSimpleName());
+           throw new WrongFoodException("Растительноядные не едят мясо: " + food.getClass().getSimpleName());
         } else if (food instanceof Wheat) {
             super.eat(food);
         } else {
-            System.out.println("Утка это ест " + food.getClass().getSimpleName());
+            throw new WrongFoodException("Утка не ест " + food.getClass().getSimpleName());
         }
     }
 }
