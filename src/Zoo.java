@@ -6,6 +6,8 @@ import animals.interfaces.Swim;
 import animals.interfaces.Voice;
 import food.*;
 
+import java.io.FileInputStream;
+
 public class Zoo {
     public static void main(String[] args) {
         Durk durk = new Durk("Mary", 0);
@@ -91,5 +93,37 @@ public class Zoo {
             pond[i].dive();
             pond[i].emerge();
         }
+
+        System.out.println("\nПроверяем как работает вольер\n");
+        Rabbit r = new Rabbit("Alex", SizeAviary.MEDIUM);
+        Tiger t = new Tiger("Leo", SizeAviary.HUGE);
+        Durk d = new Durk("Zina", SizeAviary.LITTLE);
+        Giraffe g = new Giraffe("Olaf", SizeAviary.MEDIUM);
+        Fox fx = new Fox("Linda", SizeAviary.BIG);
+        Fish fh = new Fish("Jon", SizeAviary.BIG);
+        Aviary<Herbivore> herbivoreAviary = new Aviary<>(SizeAviary.MEDIUM);
+        herbivoreAviary.add(r.getName(), r);
+        //ошибка компиляции, тигр не травоядное животное
+        //herbivoreAviary.add(tiger.getName(), tiger);
+
+        //размер вольера не совпадает, об этом будет сказано в сообщении в консоли
+        herbivoreAviary.add(d.getName(), d);
+        herbivoreAviary.add(g.getName(), g);
+        System.out.println(herbivoreAviary.toString());
+        herbivoreAviary.get("Olaf");
+        herbivoreAviary.remove("Olaf");
+        System.out.println(herbivoreAviary.toString()+ "\n");
+
+        Aviary<Carnivorous> carnivorousAviary = new Aviary<>(SizeAviary.BIG);
+        carnivorousAviary.add(t.getName(),t);
+        carnivorousAviary.add(fh.getName(),fh);
+        carnivorousAviary.add(fx.getName(),fx);
+        //ошибка компиляции, кролик не хищное животное
+        //carnivorousAviary.add(r.getName(),r);
+        System.out.println(carnivorousAviary.toString());
+
+
+
+
     }
 }

@@ -31,8 +31,13 @@ public class Aviary<T extends Animal> {
     }
 
     public void get(String name) {
-        aviaryMap.get(name);
+        System.out.println(aviaryMap.get(name));
     }
 
-
+    @Override
+    public String toString() {
+        return "Aviary{" +
+                "aviaryMap=" + aviaryMap +
+                '}';
+    }
 }
