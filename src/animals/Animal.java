@@ -7,9 +7,15 @@ import java.util.Objects;
 public abstract class Animal {
     private String name;
     private int satiety;
+    private String aviarysize;
 
     public Animal() {
         setNameAndSatiety(this.getClass().getSimpleName(), 0);
+    }
+
+    public Animal(String name, String aviarysize) {
+        this.name = name;
+        this.aviarysize = aviarysize;
     }
 
     public Animal(String name, int satiety) {

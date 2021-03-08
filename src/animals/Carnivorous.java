@@ -9,6 +9,7 @@ public abstract class Carnivorous extends Animal {
         super(name, satiety);
     }
 
+
     public Carnivorous() {
     }
 

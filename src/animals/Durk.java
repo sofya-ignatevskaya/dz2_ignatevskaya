@@ -16,6 +16,8 @@ public class Durk extends Herbivore implements Swim, Fly, Voice {
     public Durk() {
     }
 
+
+
     @Override
     public void fly() {
         System.out.println(this.getName() + " is flying");
