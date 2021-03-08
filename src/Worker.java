@@ -1,10 +1,11 @@
+import MyException.WrongFoodException;
 import animals.Animal;
 import animals.Giraffe;
 import animals.interfaces.Voice;
 import food.Food;
 
 public class Worker {
-    public void feed(Animal animal, Food food) {
+    public void feed(Animal animal, Food food) throws WrongFoodException {
         animal.eat(food);
     }
 

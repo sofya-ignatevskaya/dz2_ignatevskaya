@@ -1,3 +1,4 @@
+import MyException.WrongFoodException;
 import animals.*;
 import animals.interfaces.Fly;
 import animals.interfaces.Run;
@@ -31,7 +32,11 @@ public class Zoo {
         Food[] foods = new Food[]{wheat, leaves, carrot, meatForTiger, meatForFish, meatForFox};
         for (int i = 0; i < animals.length; i++) {
             for (int j = 0; j < foods.length; j++) {
-                worker.feed(animals[i], foods[j]);
+                try {
+                    worker.feed(animals[i], foods[j]);
+                } catch (WrongFoodException e) {
+                    e.printStackTrace();
+                }
             }
             System.out.println();
         }
