@@ -17,6 +17,10 @@ public abstract class Carnivorous extends Animal {
     public Carnivorous() {
     }
 
+    public String getSuperClassName(){
+        return "Carnivorous";
+    }
+
     @Override
     public void eat(Food food) throws WrongFoodException {
         if (food instanceof Meat) {

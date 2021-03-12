@@ -42,6 +42,10 @@ public abstract class Animal {
         return sizeAviary;
     }
 
+    public String getSuperClassName(){
+        return "Animal";
+    }
+
     public void setSatiety(int satiety) {
         this.satiety = satiety;
     }

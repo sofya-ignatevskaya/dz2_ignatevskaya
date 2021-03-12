@@ -7,6 +7,7 @@ import animals.interfaces.Voice;
 import food.*;
 
 import java.io.FileInputStream;
+import java.util.List;
 
 public class Zoo {
     public static void main(String[] args) {
@@ -114,17 +115,25 @@ public class Zoo {
         herbivoreAviary.remove("Olaf");
         System.out.println(herbivoreAviary.toString() + "\n");
 
-        Aviary<Carnivorous> carnivorousAviary = new Aviary<>(SizeAviary.BIG);
+        Aviary<Animal> carnivorousAviary = new Aviary<>(SizeAviary.BIG);
         carnivorousAviary.add(t.getName(), t);
         carnivorousAviary.add(fh.getName(), fh);
         carnivorousAviary.add(fx.getName(), fx);
         //ошибка компиляции, кролик не хищное животное
-        //carnivorousAviary.add(r.getName(),r);
+        carnivorousAviary.add(r.getName(),r);
         System.out.println(carnivorousAviary.toString() + "\n");
 
 
         Aviary<Food> aviary = new Aviary(SizeAviary.BIG);
         aviary.add("1", carrot);
         aviary.add("2", wheat);
+
+        System.out.println(r.getSuperClassName());
+
+        Aviary<Animal> a5 = new Aviary<>(SizeAviary.BIG);
+        a5.add(fh.getName(),fh);
+        a5.add(r.getName(),r);
+        System.out.println(a5.toString());
+
     }
 }

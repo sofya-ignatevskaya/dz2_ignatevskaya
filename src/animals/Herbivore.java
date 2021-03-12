@@ -17,6 +17,9 @@ public abstract class Herbivore extends Animal {
 
     public Herbivore() {
     }
+    public String getSuperClassName(){
+        return "Herbivore";
+    }
 
     @Override
     public void eat(Food food) throws WrongFoodException {
