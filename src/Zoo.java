@@ -98,6 +98,7 @@ public class Zoo {
         System.out.println("\nПроверяем как работает вольер\n");
         Rabbit r = new Rabbit("Alex", SizeAviary.MEDIUM);
         Tiger t = new Tiger("Leo", SizeAviary.HUGE);
+        Tiger t2 = new Tiger("Tom", SizeAviary.MEDIUM);
         Durk d = new Durk("Zina", SizeAviary.LITTLE);
         Giraffe g = new Giraffe("Olaf", SizeAviary.MEDIUM);
         Fox fx = new Fox("Linda", SizeAviary.BIG);
@@ -115,25 +116,36 @@ public class Zoo {
         herbivoreAviary.remove("Olaf");
         System.out.println(herbivoreAviary.toString() + "\n");
 
-        Aviary<Animal> carnivorousAviary = new Aviary<>(SizeAviary.BIG);
+        Aviary<Carnivorous> carnivorousAviary = new Aviary<>(SizeAviary.BIG);
         carnivorousAviary.add(t.getName(), t);
         carnivorousAviary.add(fh.getName(), fh);
         carnivorousAviary.add(fx.getName(), fx);
         //ошибка компиляции, кролик не хищное животное
-        carnivorousAviary.add(r.getName(),r);
+       // carnivorousAviary.add(r.getName(),r);
         System.out.println(carnivorousAviary.toString() + "\n");
 
 
         Aviary<Food> aviary = new Aviary(SizeAviary.BIG);
         aviary.add("1", carrot);
         aviary.add("2", wheat);
+        System.out.println();
 
-        System.out.println(r.getSuperClassName());
-
-        Aviary<Animal> a5 = new Aviary<>(SizeAviary.BIG);
-        a5.add(fh.getName(),fh);
-        a5.add(r.getName(),r);
-        System.out.println(a5.toString());
-
+        Aviary<Animal> a6 = new Aviary<>(SizeAviary.MEDIUM);
+        a6.add(r.getName(),r);
+        a6.add(d.getName(),d);
+        a6.add(t.getName(),t);
+        a6.add(g.getName(),g);
+        System.out.println("Тип вольера: " + a6.getType());
+        System.out.println(a6.toString());
+        a6.remove(r.getName());
+        System.out.println(a6.toString());
+        System.out.println("Тип вольера: " + a6.getType());
+        a6.remove(g.getName());
+        System.out.println(a6.toString());
+        System.out.println("Тип вольера: " + a6.getType());
+        a6.add(t2.getName(),t2);
+        a6.add(r.getName(),r);
+        System.out.println(a6.toString());
+        System.out.println("Тип вольера: " + a6.getType());
     }
 }

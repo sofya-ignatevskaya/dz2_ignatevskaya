@@ -20,19 +20,20 @@ public class Aviary<T> {
     public void add(String key, T object) {
 
         if (object instanceof Animal) {
-
-            if (((Animal) object).getSizeAviary() == this.sizeAviary) {
-                if (type == null){
-                    type = ((Animal) object).getSuperClassName();
-                }else if (type.equals(((Animal) object).getSuperClassName())){
+            if (type == null) {
+                type = ((Animal) object).getSuperClassName(); // добавляем тип вольера
+            }
+            if (type.equals(((Animal) object).getSuperClassName())) {
+                if (((Animal) object).getSizeAviary() == this.sizeAviary) {
                     aviaryMap.put(key, object);
                     System.out.println(((Animal) object).getName() + " добавлен в вольер");
-                }else{
-                    System.out.println("Животное не добавлено из-за несоответствия типа");
+
+                } else if (((Animal) object).getSizeAviary() != this.sizeAviary) {
+                    System.out.println("Вольер не подходит по размеру. " + ((Animal) object).getName()
+                            + " не добавлен в вольер");
                 }
-            } else if (((Animal) object).getSizeAviary() != this.sizeAviary) {
-                System.out.println("Вольер не подходит по размеру. " + ((Animal) object).getName()
-                        + " не добавлен в вольер");
+            } else {
+                System.out.println("У " + ((Animal) object).getName() + " тип: " + ((Animal) object).getSuperClassName() + " Животное не добавлено");
             }
         } else {
             System.out.println(object.getClass().getSimpleName() + " добавлен в вольер");
@@ -41,6 +42,10 @@ public class Aviary<T> {
 
 
     public void remove(String key) {
+        if(aviaryMap.size() == 1)
+        {
+            type = null;
+        }
         aviaryMap.remove(key);
     }
 
@@ -55,16 +60,9 @@ public class Aviary<T> {
                 '}';
     }
 
-    public void getType() {
-        System.out.println("Тип вольера: " + type);;
+    public String getType() {
+        return type;
     }
-
-    /*public static void main(String[] args) {
-        Rabbit r = new Rabbit();
-        Aviary<Animal> carnivorousAviary = new Aviary<>(SizeAviary.BIG);
-        /*carnivorousAviary.add(r.getName(), r);
-        System.out.println(carnivorousAviary.getType());
-    }*/
 
 }
 
