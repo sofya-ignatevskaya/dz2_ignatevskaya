@@ -51,15 +51,4 @@ public class Fox extends Carnivorous implements Run, Voice {
         System.out.println(this.getName() + " is silent");
     }
 
-    @Override
-    public void eat(Food food) {
-        if (food instanceof Grass) {
-            System.out.println("Хищники не едят растения: " + food.getClass().getSimpleName());
-        } else if (food instanceof MeatForFox) {
-            super.eat(food);
-        } else {
-            System.out.println("Лиса не ест " + food.getClass().getSimpleName());
-        }
-
-    }
 }

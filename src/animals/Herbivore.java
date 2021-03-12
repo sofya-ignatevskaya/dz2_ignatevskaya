@@ -14,8 +14,12 @@ public abstract class Herbivore extends Animal {
 
     @Override
     public void eat(Food food) {
-        food.addSatiety(this);
-        System.out.println(this.getName() + " eat " + food.getClass().getSimpleName() +
-                ". Satiety is " + this.getSatiety());
+        if (food instanceof Grass) {
+            food.addSatiety(this);
+            System.out.println(this.getName() + " eat " + food.getClass().getSimpleName() +
+                    ". Satiety is " + this.getSatiety());
+        } else {
+            System.out.println("Растительноядные не едят мясо: " + food.getClass().getSimpleName());
+        }
     }
 }
