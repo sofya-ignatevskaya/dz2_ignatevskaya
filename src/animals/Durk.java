@@ -67,14 +67,4 @@ public class Durk extends Herbivore implements Swim, Fly, Voice {
         System.out.println(this.getName() + " is silent");
     }
 
-    @Override
-    public void eat(Food food) throws WrongFoodException {
-        if (food instanceof Meat) {
-           throw new WrongFoodException("Растительноядные не едят мясо: " + food.getClass().getSimpleName());
-        } else if (food instanceof Wheat) {
-            super.eat(food);
-        } else {
-            throw new WrongFoodException("Утка не ест " + food.getClass().getSimpleName());
-        }
-    }
 }

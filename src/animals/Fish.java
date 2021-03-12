@@ -34,14 +34,4 @@ public class Fish extends Carnivorous implements Swim {
         System.out.println(this.getName() + " is emerging from the water");
     }
 
-    @Override
-    public void eat(Food food) throws WrongFoodException {
-        if (food instanceof Grass) {
-            throw new WrongFoodException("Хищники не едят растения: " + food.getClass().getSimpleName());
-        } else if (food instanceof MeatForFish) {
-            super.eat(food);
-        } else {
-            throw new WrongFoodException("Хищная рыба не ест " + food.getClass().getSimpleName());
-        }
-    }
 }

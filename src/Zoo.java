@@ -112,15 +112,19 @@ public class Zoo {
         System.out.println(herbivoreAviary.toString());
         herbivoreAviary.get("Olaf");
         herbivoreAviary.remove("Olaf");
-        System.out.println(herbivoreAviary.toString()+ "\n");
+        System.out.println(herbivoreAviary.toString() + "\n");
 
         Aviary<Carnivorous> carnivorousAviary = new Aviary<>(SizeAviary.BIG);
-        carnivorousAviary.add(t.getName(),t);
-        carnivorousAviary.add(fh.getName(),fh);
-        carnivorousAviary.add(fx.getName(),fx);
+        carnivorousAviary.add(t.getName(), t);
+        carnivorousAviary.add(fh.getName(), fh);
+        carnivorousAviary.add(fx.getName(), fx);
         //ошибка компиляции, кролик не хищное животное
         //carnivorousAviary.add(r.getName(),r);
-        System.out.println(carnivorousAviary.toString());
+        System.out.println(carnivorousAviary.toString() + "\n");
 
+
+        Aviary<Food> aviary = new Aviary(SizeAviary.BIG);
+        aviary.add("1", carrot);
+        aviary.add("2", wheat);
     }
 }

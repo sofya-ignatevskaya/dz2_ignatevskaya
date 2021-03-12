@@ -20,7 +20,7 @@ public abstract class Herbivore extends Animal {
 
     @Override
     public void eat(Food food) throws WrongFoodException {
-        if (food instanceof Wheat) {
+        if (food instanceof Grass) {
             food.addSatiety(this);
             System.out.println(this.getName() + " eat " + food.getClass().getSimpleName() +
                     ". Satiety is " + this.getSatiety());

@@ -55,15 +55,4 @@ public class Giraffe extends Herbivore implements Run, Voice {
         System.out.println(this.getName() + " is silent");
     }
 
-    @Override
-    public void eat(Food food) throws WrongFoodException {
-        if (food instanceof Meat) {
-            throw new WrongFoodException("Растительноядные не едят мясо: " + food.getClass().getSimpleName());
-        } else if (food instanceof Leaves) {
-            super.eat(food);
-        } else {
-            throw new WrongFoodException("Жираф не ест " + food.getClass().getSimpleName());
-        }
-
-    }
 }
