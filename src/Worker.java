@@ -1,6 +1,7 @@
 import MyException.WrongFoodException;
 import animals.Animal;
 import animals.Giraffe;
+import animals.SizeAviary;
 import animals.interfaces.Voice;
 import food.Food;
 

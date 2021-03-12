@@ -4,6 +4,7 @@ import MyException.WrongFoodException;
 import food.Food;
 import food.Grass;
 import food.Meat;
+import food.Wheat;
 
 public abstract class Herbivore extends Animal {
     public Herbivore(String name, int satiety) {
@@ -19,8 +20,13 @@ public abstract class Herbivore extends Animal {
 
     @Override
     public void eat(Food food) throws WrongFoodException {
-        food.addSatiety(this);
-        System.out.println(this.getName() + " eat " + food.getClass().getSimpleName() +
-                ". Satiety is " + this.getSatiety());
+        if (food instanceof Wheat) {
+            food.addSatiety(this);
+            System.out.println(this.getName() + " eat " + food.getClass().getSimpleName() +
+                    ". Satiety is " + this.getSatiety());
+        } else {
+            throw new WrongFoodException("Растительноядные не едят мясо: "
+                    + food.getClass().getSimpleName());
+        }
     }
 }
